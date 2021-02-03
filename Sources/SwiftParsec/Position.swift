@@ -50,7 +50,7 @@ public struct SourcePosition: Comparable, CustomStringConvertible {
     ///
     /// - parameter char: The tested character indicating how to update the
     ///   position.
-    mutating func updatePosition(_ char: Character) {
+    public mutating func updatePosition(_ char: Character) {
         
         switch char {
             

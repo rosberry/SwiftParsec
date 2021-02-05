@@ -272,25 +272,25 @@ public extension LanguageDefinition {
 //
 // Empty definition
 //
-private let emptyOperatorLetterCharacters = ":!$%&*+./<=>?\\^|-~"
+public let emptyOperatorLetterCharacters = ":!$%&*+./<=>?\\^|-~"
 
 //
 // JSON definition
 //
-private let jsonEscapeMap: [(esc: Character, code: Character)] = [
+public let jsonEscapeMap: [(esc: Character, code: Character)] = [
     ("\"", "\""), ("\\", "\\"), ("/", "/"), ("b", "\u{0008}"),
     ("f", "\u{000C}"), ("n", "\n"), ("r", "\r"), ("t", "\t")
 ]
 
-private let jsonMaxEscapeDigit = 4
+public let jsonMaxEscapeDigit = 4
 
 //
 // Swift definition
 //
-private let swiftImplicitParameterStart: Character = "$"
+public let swiftImplicitParameterStart: Character = "$"
 
 // Initialized this way to overcome Swift 4.2 compiler error
-private let swiftIdentifierStartCharacters: String = {
+public let swiftIdentifierStartCharacters: String = {
     let strands: [String] = [
         (0x0041...0x005A).stringValue, // 'A' to 'Z'
         (0x0061...0x007A).stringValue, // 'a' to 'z'
@@ -344,10 +344,10 @@ private let swiftIdentifierStartCharacters: String = {
     return strands.reduce(into: "") { $0 += $1 }
 }()
 
-private let swiftIdentifierStartSet =
+public let swiftIdentifierStartSet =
     CharacterSet(charactersIn: swiftIdentifierStartCharacters)
 
-private let swiftIdentifierLetterCharacters =
+public let swiftIdentifierLetterCharacters =
     swiftIdentifierStartCharacters +
     "0123456789" +
     (0x0300...0x036F).stringValue +
@@ -355,10 +355,10 @@ private let swiftIdentifierLetterCharacters =
     (0x20D0...0x20FF).stringValue +
     (0xFE20...0xFE2F).stringValue
 
-private let swiftIdentifierLetterSet =
+public let swiftIdentifierLetterSet =
     CharacterSet(charactersIn: swiftIdentifierLetterCharacters)
 
-private let swiftOperatorStartCharacters =
+public let swiftOperatorStartCharacters =
     "/=-+!*%<>&|^?~" +
     (0x00A1...0x00A7).stringValue +
     "\u{00A9}\u{00AB}" +
@@ -376,10 +376,10 @@ private let swiftOperatorStartCharacters =
     (0x3001...0x3003).stringValue +
     (0x3008...0x3030).stringValue
 
-private let swiftOperatorStartSet =
+public let swiftOperatorStartSet =
     CharacterSet(charactersIn: swiftOperatorStartCharacters)
 
-private let swiftOperatorLetterCharacters =
+public let swiftOperatorLetterCharacters =
     swiftOperatorStartCharacters +
     (0x0300...0x036F).stringValue +
     (0x1DC0...0x1DFF).stringValue +
@@ -388,10 +388,10 @@ private let swiftOperatorLetterCharacters =
     (0xFE20...0xFE2F).stringValue +
     (0xE0100...0xE01EF).stringValue
 
-private let swiftOperatorLetterSet =
+public let swiftOperatorLetterSet =
     CharacterSet(charactersIn: swiftOperatorLetterCharacters)
 
-private let swiftEscapeMap: [(esc: Character, code: Character)] = [
+public let swiftEscapeMap: [(esc: Character, code: Character)] = [
     ("n", "\n"), ("r", "\r"), ("t", "\t"), ("\\", "\\"), ("\"", "\""),
     ("'", "'"), ("0", "\0")
 ]
